@@ -1,18 +1,20 @@
 package primeFactors;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeFactors {
 
     public static List<Integer> generate(int number) {
-        if (number == 2) {
-            return List.of(2);
+        List<Integer> factors = new ArrayList<>();
+
+        for (int divisor = 2; number > 1; divisor++) {
+            while (number % divisor == 0) {
+                factors.add(divisor);
+                number /= divisor;
+            }
         }
 
-        else if (number == 3) {
-            return List.of(3);
-        }
-
-        return List.of();
+        return factors;
     }
 }

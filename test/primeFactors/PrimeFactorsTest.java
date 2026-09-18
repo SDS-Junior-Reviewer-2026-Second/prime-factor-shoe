@@ -5,15 +5,12 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class PrimeFactorsTest {
 
-	PrimeFactors primeFactors = new PrimeFactors();
-
 	@Test
 	public void one() {
-		assertEquals(List.of(), primeFactors.generate(1));
+		assertEquals(List.of(), PrimeFactors.generate(1));
 	}
 
 	@Test
@@ -26,6 +23,23 @@ public class PrimeFactorsTest {
 		assertEquals(List.of(3), PrimeFactors.generate(3));
 	}
 
+	@Test
+	public void four() {
+		assertEquals(List.of(2, 2), PrimeFactors.generate(4));
+	}
 
+	@Test
+	public void six() {
+		assertEquals(List.of(2, 3), PrimeFactors.generate(6));
+	}
 
+	@Test
+	public void nine() {
+		assertEquals(List.of(3, 3), PrimeFactors.generate(9));
+	}
+
+	@Test
+	public void twelve() {
+		assertEquals(List.of(2, 2, 3), PrimeFactors.generate(12));
+	}
 }
